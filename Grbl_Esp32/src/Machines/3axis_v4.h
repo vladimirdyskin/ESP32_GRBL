@@ -44,9 +44,9 @@
 // OK to comment out to use pin for other features
 #define STEPPERS_DISABLE_PIN    GPIO_NUM_13
 
-#define SPINDLE_TYPE SpindleType::PWM
-#define SPINDLE_OUTPUT_PIN      GPIO_NUM_21   // labeled SpinPWM
-#define INVERT_SPINDLE_PWM 1
+#define SPINDLE_TYPE SpindleType::NONE
+// #define SPINDLE_OUTPUT_PIN      GPIO_NUM_21   // labeled SpinPWM
+// #define INVERT_SPINDLE_PWM 1
 // #define SPINDLE_ENABLE_PIN      GPIO_NUM_22  // labeled SpinEnbl
 
 //#define COOLANT_MIST_PIN        GPIO_NUM_21  // labeled Mist

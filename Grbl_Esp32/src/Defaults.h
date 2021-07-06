@@ -99,11 +99,11 @@
 #endif
 
 #ifndef DEFAULT_HARD_LIMIT_ENABLE
-#    define DEFAULT_HARD_LIMIT_ENABLE 0  // $21 false
+#    define DEFAULT_HARD_LIMIT_ENABLE 1  // $21 false
 #endif
 
 #ifndef DEFAULT_HOMING_ENABLE
-#    define DEFAULT_HOMING_ENABLE 0  // $22 false
+#    define DEFAULT_HOMING_ENABLE 1  // $22 false
 #endif
 
 #ifndef DEFAULT_HOMING_DIR_MASK
@@ -135,11 +135,11 @@
 #endif
 
 #ifndef DEFAULT_HOMING_CYCLE_1
-#    define DEFAULT_HOMING_CYCLE_1 (bit(X_AXIS) | bit(Y_AXIS))
+#    define DEFAULT_HOMING_CYCLE_1 bit(X_AXIS)
 #endif
 
 #ifndef DEFAULT_HOMING_CYCLE_2
-#    define DEFAULT_HOMING_CYCLE_2 0
+#    define DEFAULT_HOMING_CYCLE_2 bit(Y_AXIS)
 #endif
 
 #ifndef DEFAULT_HOMING_CYCLE_3
