@@ -25,9 +25,14 @@
     You should have received a copy of the GNU General Public License
     along with Grbl_ESP32.  If not, see <http://www.gnu.org/licenses/>.
 */
+// 2 axis
+
 #define MACHINE_NAME            "Sunrise3D"
 
 #define N_AXIS 3
+#define DEFAULT_HOMING_CYCLE_0      (bit(Z_AXIS)) 
+#define DEFAULT_HOMING_CYCLE_1      (bit(X_AXIS))  // override this one in defaults.h
+#define DEFAULT_HOMING_CYCLE_2      0  // override this one in defaults.h
 // #define ENABLE_WIFI
 // #define ENABLE_CAPTIVE_PORTAL
 
@@ -67,9 +72,9 @@
 #define DEFAULT_STEPPER_IDLE_LOCK_TIME 255 // stay on
 
 #define DEFAULT_STEPPING_INVERT_MASK 0 // uint8_t
-#define DEFAULT_DIRECTION_INVERT_MASK 5 // uint8_t
+#define DEFAULT_DIRECTION_INVERT_MASK 4 // uint8_t
 #define DEFAULT_INVERT_ST_ENABLE 0 // boolean
-#define DEFAULT_INVERT_LIMIT_PINS 0 // boolean
+#define DEFAULT_INVERT_LIMIT_PINS 1 // boolean
 #define DEFAULT_INVERT_PROBE_PIN 0 // boolean
 
 // #define DEFAULT_STATUS_REPORT_MASK 1
@@ -82,9 +87,9 @@
 #define DEFAULT_HARD_LIMIT_ENABLE 1  // false
 
 #define DEFAULT_HOMING_ENABLE 1
-// #define DEFAULT_HOMING_DIR_MASK 0 // move positive dir Z, negative X,Y
-#define DEFAULT_HOMING_FEED_RATE 25.0 // mm/min
-#define DEFAULT_HOMING_SEEK_RATE 350.0 // mm/min
+#define DEFAULT_HOMING_DIR_MASK 3 // move positive dir Z, negative X,Y
+#define DEFAULT_HOMING_FEED_RATE 50.0 // mm/min
+#define DEFAULT_HOMING_SEEK_RATE 750.0 // mm/min
 #define DEFAULT_HOMING_DEBOUNCE_DELAY 250 // msec (0-65k)
 #define DEFAULT_HOMING_PULLOFF 4.0 // mm
 

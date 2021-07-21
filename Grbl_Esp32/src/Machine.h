@@ -12,7 +12,7 @@
 
 // !!! For actual use, change the line above to select a board
 // from Machines/, for example:
-#include "Machines/3axis_v4.h"
+#include "Machines/2axis_sunrise.h"
 // #include "Machines/3axis_Mill.h"
 
 // === OEM Single File Configuration Option
