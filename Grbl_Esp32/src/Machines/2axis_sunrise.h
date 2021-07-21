@@ -30,6 +30,7 @@
 #define MACHINE_NAME            "Sunrise3D"
 
 #define N_AXIS 3
+// #define INVERT_LIMIT_PIN_MASK (bit(X_AXIS))
 #define DEFAULT_HOMING_CYCLE_0      (bit(Z_AXIS)) 
 #define DEFAULT_HOMING_CYCLE_1      (bit(X_AXIS))  // override this one in defaults.h
 #define DEFAULT_HOMING_CYCLE_2      0  // override this one in defaults.h
@@ -72,7 +73,7 @@
 #define DEFAULT_STEPPER_IDLE_LOCK_TIME 255 // stay on
 
 #define DEFAULT_STEPPING_INVERT_MASK 0 // uint8_t
-#define DEFAULT_DIRECTION_INVERT_MASK 4 // uint8_t
+#define DEFAULT_DIRECTION_INVERT_MASK 5 // uint8_t
 #define DEFAULT_INVERT_ST_ENABLE 0 // boolean
 #define DEFAULT_INVERT_LIMIT_PINS 1 // boolean
 #define DEFAULT_INVERT_PROBE_PIN 0 // boolean
