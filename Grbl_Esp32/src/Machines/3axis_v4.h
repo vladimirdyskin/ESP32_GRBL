@@ -27,8 +27,9 @@
 */
 #define MACHINE_NAME            "Sunrise3D"
 
-#define ENABLE_WIFI
-#define ENABLE_CAPTIVE_PORTAL
+#define N_AXIS 3
+// #define ENABLE_WIFI
+// #define ENABLE_CAPTIVE_PORTAL
 
 #define X_STEP_PIN              GPIO_NUM_12
 #define X_DIRECTION_PIN         GPIO_NUM_14
