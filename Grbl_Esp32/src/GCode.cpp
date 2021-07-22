@@ -815,6 +815,7 @@ Error gc_execute_line(char* line, uint8_t client) {
 #endif
     // [10. Dwell ]: P value missing. P is negative (done.) NOTE: See below.
     if (gc_block.non_modal_command == NonModal::Dwell) {
+        grbl_send(CLIENT_SERIAL, "Z_move_comp\r\n");
         if (bit_isfalse(value_words, bit(GCodeWord::P))) {
             FAIL(Error::GcodeValueWordMissing);  // [P word missing]
         }
