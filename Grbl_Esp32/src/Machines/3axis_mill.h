@@ -30,12 +30,13 @@
 #define MACHINE_NAME            "CNC"
 
 #define N_AXIS 3
-#define INVERT_LIMIT_PIN_MASK (bit(X_AXIS))
-// #define DEFAULT_HOMING_CYCLE_0      (bit(Z_AXIS)) 
-// #define DEFAULT_HOMING_CYCLE_1      (bit(X_AXIS))  // override this one in defaults.h
+// #define INVERT_LIMIT_PIN_MASK (bit(X_AXIS))
+#define DEFAULT_HOMING_CYCLE_0      (bit(Z_AXIS)) 
+#define DEFAULT_HOMING_CYCLE_1      (bit(Y_AXIS))  // override this one in defaults.h
 // #define DEFAULT_HOMING_CYCLE_2      0  // override this one in defaults.h
-// #define ENABLE_WIFI
-// #define ENABLE_CAPTIVE_PORTAL
+#define ENABLE_WIFI
+#define ENABLE_CAPTIVE_PORTAL
+#define ENABLE_SD_CARD
 
 #define X_STEP_PIN              GPIO_NUM_12
 #define X_DIRECTION_PIN         GPIO_NUM_14
@@ -53,17 +54,16 @@
 
 #define SPINDLE_TYPE SpindleType::PWM
 #define SPINDLE_OUTPUT_PIN      GPIO_NUM_21   // labeled SpinPWM
-#define INVERT_SPINDLE_PWM 1
+// #define INVERT_SPINDLE_PWM 1
 // #define SPINDLE_ENABLE_PIN      GPIO_NUM_22  // labeled SpinEnbl
 
-//#define COOLANT_MIST_PIN        GPIO_NUM_21  // labeled Mist
+#define COOLANT_MIST_PIN        GPIO_NUM_22  // labeled Mist
 // #define COOLANT_FLOOD_PIN       GPIO_NUM_25  // labeled Flood
-// #define PROBE_PIN               GPIO_NUM_32  // labeled Probe
+#define PROBE_PIN               GPIO_NUM_32  // labeled Probe
 
 
 /*
 #define CONTROL_SAFETY_DOOR_PIN GPIO_NUM_35  // labeled Door,  needs external pullup
-#define CONTROL_RESET_PIN       GPIO_NUM_34  // labeled Reset, needs external pullup
 #define CONTROL_FEED_HOLD_PIN   GPIO_NUM_36  // labeled Hold,  needs external pullup
 #define CONTROL_CYCLE_START_PIN GPIO_NUM_39  // labeled Start, needs external pullup
 */
@@ -88,9 +88,9 @@
 #define DEFAULT_HARD_LIMIT_ENABLE 1  // false
 
 #define DEFAULT_HOMING_ENABLE 1
-#define DEFAULT_HOMING_DIR_MASK 4 // move positive dir Z, negative X,Y
-#define DEFAULT_HOMING_FEED_RATE 50.0 // mm/min
-#define DEFAULT_HOMING_SEEK_RATE 750.0 // mm/min
+#define DEFAULT_HOMING_DIR_MASK 3 // move positive dir Z, negative X,Y
+#define DEFAULT_HOMING_FEED_RATE 25.0 // mm/min
+#define DEFAULT_HOMING_SEEK_RATE 500.0 // mm/min
 #define DEFAULT_HOMING_DEBOUNCE_DELAY 250 // msec (0-65k)
 #define DEFAULT_HOMING_PULLOFF 4.0 // mm
 
@@ -99,18 +99,18 @@
 
 // #define DEFAULT_LASER_MODE 0 // false
 
-#define DEFAULT_X_STEPS_PER_MM 750.0
-#define DEFAULT_Y_STEPS_PER_MM 250.0
-#define DEFAULT_Z_STEPS_PER_MM 3200.0 // This is percent in servo mode...used for calibration
+#define DEFAULT_X_STEPS_PER_MM 400.0
+#define DEFAULT_Y_STEPS_PER_MM 400.0
+#define DEFAULT_Z_STEPS_PER_MM 400.0 // This is percent in servo mode...used for calibration
 
-#define DEFAULT_X_MAX_RATE 9000.0 // mm/min
-#define DEFAULT_Y_MAX_RATE 7000.0 // mm/min
-#define DEFAULT_Z_MAX_RATE 400.0 // mm/min
+#define DEFAULT_X_MAX_RATE 5000.0 // mm/min
+#define DEFAULT_Y_MAX_RATE 5000.0 // mm/min
+#define DEFAULT_Z_MAX_RATE 800.0 // mm/min
 
-#define DEFAULT_X_ACCELERATION 30.0 // mm/sec^2. 50 mm/sec^2 = 180000 mm/min^2
-#define DEFAULT_Y_ACCELERATION 200.0 // mm/sec^2
+#define DEFAULT_X_ACCELERATION 10.0 // mm/sec^2. 50 mm/sec^2 = 180000 mm/min^2
+#define DEFAULT_Y_ACCELERATION 10.0 // mm/sec^2
 #define DEFAULT_Z_ACCELERATION 10.0 // mm/sec^2
 
-#define DEFAULT_X_MAX_TRAVEL 200.0 // mm NOTE: Must be a positive value.
-#define DEFAULT_Y_MAX_TRAVEL 200.0 // mm NOTE: Must be a positive value.
-#define DEFAULT_Z_MAX_TRAVEL 200.0 // This is percent in servo mode...used for calibration
+#define DEFAULT_X_MAX_TRAVEL 180.0 // mm NOTE: Must be a positive value.
+#define DEFAULT_Y_MAX_TRAVEL 130.0 // mm NOTE: Must be a positive value.
+#define DEFAULT_Z_MAX_TRAVEL 75.0 // This is percent in servo mode...used for calibration
